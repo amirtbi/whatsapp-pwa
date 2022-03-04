@@ -1,3 +1,4 @@
+import weatherMessanger from "../pages/weatherMessanger.vue";
 const routes = [
   {
     path: "/",

@@ -17,7 +17,11 @@ module.exports = configure(function (ctx) {
 
     // https://quasar.dev/quasar-cli/prefetch-feature
     // preFetch: true,
+    // VERCEL
 
+    build: {
+      distDir: ctx.mode.spa ? "public" : null,
+    },
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/boot-files
@@ -103,10 +107,10 @@ module.exports = configure(function (ctx) {
 
     // https://quasar.dev/quasar-cli/developing-ssr/configuring-ssr
     ssr: {
-      pwa: false,
+      pwa: true,
 
-      // manualStoreHydration: true,
-      // manualPostHydrationTrigger: true,
+      manualStoreHydration: true,
+      manualPostHydrationTrigger: true,
 
       prodPort: 3000, // The default port that the production server should use
       // (gets superseded if process.env.PORT is specified at runtime)
